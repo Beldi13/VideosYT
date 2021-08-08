@@ -13,6 +13,8 @@ public class CamposVacios extends javax.swing.JFrame {
 
     public CamposVacios() {
         initComponents();
+        //video deshabilitar copiar, pegar y cortar Link del video: https://youtu.be/kwIZ4QePMfA
+        Validar.deshabilitarCPX(JTACampo5);
     }
 
     /**
@@ -89,6 +91,14 @@ public class CamposVacios extends javax.swing.JFrame {
         JTFCampo4 = new javax.swing.JTextField();
         JL4 = new javax.swing.JLabel();
         JLMensaje3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JTACampo5 = new javax.swing.JTextArea();
+        JL5 = new javax.swing.JLabel();
+        JL6 = new javax.swing.JLabel();
+        JL7 = new javax.swing.JLabel();
+        JL8 = new javax.swing.JLabel();
+        JL9 = new javax.swing.JLabel();
+        JL10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Validar campos vacíos");
@@ -111,7 +121,7 @@ public class CamposVacios extends javax.swing.JFrame {
         JLyt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/youtube.png"))); // NOI18N
         JPPie.add(JLyt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 40, 40));
 
-        JPContenedor.add(JPPie, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 502, 40));
+        JPContenedor.add(JPPie, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 700, 502, 40));
 
         JBTValidarCampos.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         JBTValidarCampos.setText("Validar Campos");
@@ -120,7 +130,7 @@ public class CamposVacios extends javax.swing.JFrame {
                 JBTValidarCamposActionPerformed(evt);
             }
         });
-        JPContenedor.add(JBTValidarCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 200, 40));
+        JPContenedor.add(JBTValidarCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 620, 200, 40));
 
         JTFCampo1.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         JTFCampo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -185,13 +195,49 @@ public class CamposVacios extends javax.swing.JFrame {
 
         JL4.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         JL4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JL4.setText("Validar sintaxis email");
-        JPContenedor.add(JL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, 40));
+        JL4.setText("Copiar");
+        JPContenedor.add(JL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 130, 20));
 
         JLMensaje3.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         JLMensaje3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLMensaje3.setText("mensaje");
         JPContenedor.add(JLMensaje3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 502, 40));
+
+        JTACampo5.setColumns(20);
+        JTACampo5.setRows(5);
+        jScrollPane1.setViewportView(JTACampo5);
+
+        JPContenedor.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 200, 110));
+
+        JL5.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL5.setText("Validar sintaxis email");
+        JPContenedor.add(JL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, 40));
+
+        JL6.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL6.setText("Deshabilitar");
+        JPContenedor.add(JL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 130, 20));
+
+        JL7.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL7.setText("Copiar");
+        JPContenedor.add(JL7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, 130, 20));
+
+        JL8.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL8.setText("Deshabilitar");
+        JPContenedor.add(JL8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 130, 20));
+
+        JL9.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL9.setText("Cortar");
+        JPContenedor.add(JL9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 130, 20));
+
+        JL10.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        JL10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL10.setText("Pegar");
+        JPContenedor.add(JL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 130, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,7 +247,7 @@ public class CamposVacios extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(JPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -287,9 +333,15 @@ public class CamposVacios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBTValidarCampos;
     private javax.swing.JLabel JL1;
+    private javax.swing.JLabel JL10;
     private javax.swing.JLabel JL2;
     private javax.swing.JLabel JL3;
     private javax.swing.JLabel JL4;
+    private javax.swing.JLabel JL5;
+    private javax.swing.JLabel JL6;
+    private javax.swing.JLabel JL7;
+    private javax.swing.JLabel JL8;
+    private javax.swing.JLabel JL9;
     private javax.swing.JLabel JLMensaje;
     private javax.swing.JLabel JLMensaje1;
     private javax.swing.JLabel JLMensaje2;
@@ -299,9 +351,11 @@ public class CamposVacios extends javax.swing.JFrame {
     private javax.swing.JLabel JLyt;
     private javax.swing.JPanel JPContenedor;
     private javax.swing.JPanel JPPie;
+    private javax.swing.JTextArea JTACampo5;
     private javax.swing.JTextField JTFCampo1;
     private javax.swing.JTextField JTFCampo2;
     private javax.swing.JTextField JTFCampo3;
     private javax.swing.JTextField JTFCampo4;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

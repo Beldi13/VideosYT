@@ -2,6 +2,8 @@ package Validaciones;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 
 public class Validar {
 
@@ -62,8 +64,9 @@ public class Validar {
      * https://www.ietf.org/rfc/rfc5322.txt , http://emailregex.com/
      * "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
      * Expresión más simple. ([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+
-     * 
+     *
      * Link del video: https://youtu.be/GGFsOID__ME
+     *
      * @param correo
      * @return retorna true si el correo es valido, false cualquier otro caso.
      */
@@ -71,5 +74,20 @@ public class Validar {
         Pattern patron = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
         Matcher comparador = patron.matcher(correo);
         return comparador.find();
+    }
+
+    /**
+     * Método para deshabilitar las combinaciones usadas para copiar, cortar y
+     * pegar en componente.
+     *
+     * Link del video: https://youtu.be/kwIZ4QePMfA
+     * 
+     * @param campo componente al que se le deshabilitara las combinaciones.
+     */
+    public static void deshabilitarCPX(JComponent campo) {
+        campo.getInputMap().put(KeyStroke.getKeyStroke("control C"), "none");
+        campo.getInputMap().put(KeyStroke.getKeyStroke("control X"), "none");
+        campo.getInputMap().put(KeyStroke.getKeyStroke("control V"), "none");
+        campo.getInputMap().put(KeyStroke.getKeyStroke("shift INSERT"), "none");
     }
 }
